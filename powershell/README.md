@@ -2,12 +2,13 @@
 `.\Get-GoServerStats.ps1 -user goaccount -pass Password -domain .domain.com -servers @('service1','service2')`
 
 #switches 
-* -full "prints out a large table with more info in it"
-* -report "saves a report to disk"
-* -user "the go user to run http requests as"
-* -pass "the password for the above user"
-* -domain "the domain that the go servers are found on"
-* -servers "the list of go servers to run the code against"
+* -full "Prints out a large table with more info in it"
+* -report "Saves a report to disk"
+* -user "The go user to run http requests as"
+* -pass "The password for the above user"
+* -domain "The domain that the go servers are found on"
+* -servers "The list of go servers to run the code against"
+* -tenant "The tenant to report stats for"
 
 #results
 ```

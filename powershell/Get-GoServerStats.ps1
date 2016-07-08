@@ -4,10 +4,14 @@
     [string] $user = 'goserverreadonlyuser',
     [string] $pass = 'password',
     [string] $domain = '.mydomain.com',
-    [string[]] $servers = @()
+    [string[]] $servers = @(),
+    [string] $tenant = ''
 )
 
 Set-StrictMode -Version 3
+
+if($tenant.Length -gt 0){ $tenant = "-"+$tenant}
+write-host -ForegroundColor Cyan "tenant is set to '$tenant'"
 
 $pair = "$($user):$($pass)"
 $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
@@ -33,12 +37,12 @@ function GetGoServerStats([string] $goserver){
             $build.name = $build.name -replace $remove, ""    
         }
         return $builds
-    }
+    }    
 
     $allBuilds = GetBuildLabels "(build|artifact)$" " :: (Build|Artifact)"
-    $allDeployTest = GetBuildLabels "^Deploy-[^\-]+-Test[^:]+:: Deploy$" " :: Deploy"
-    $allDeployProd = GetBuildLabels "^Deploy-[^\-]+-Prod[^:]+:: Deploy$" " :: Deploy"
-    $allDeployPreprod = GetBuildLabels "^Deploy-[^\-]+-Preprod[^:]+:: Deploy$" " :: Deploy"
+    $allDeployTest = GetBuildLabels "^Deploy-[^\-]+-Test$tenant[^:]+:: Deploy$" " :: Deploy"
+    $allDeployProd = GetBuildLabels "^Deploy-[^\-]+-Prod$tenant[^:]+:: Deploy$" " :: Deploy"
+    $allDeployPreprod = GetBuildLabels "^Deploy-[^\-]+-Preprod$tenant[^:]+:: Deploy$" " :: Deploy"
 
     $results = @()
 
