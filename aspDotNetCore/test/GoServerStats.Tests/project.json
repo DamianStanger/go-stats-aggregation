@@ -9,7 +9,8 @@
     },
     "xunit": "2.1.0",
     "dotnet-test-xunit": "1.0.0-rc2-build10015",
-    "GoServerStats": "1.0.0-*"
+    "GoServerStats": "1.0.0-*",
+    "FluentAssertions": "4.11.0"
   },
   "frameworks": {
     "netcoreapp1.0": {
