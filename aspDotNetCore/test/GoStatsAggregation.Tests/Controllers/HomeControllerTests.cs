@@ -1,11 +1,11 @@
 ﻿using FluentAssertions;
-using GoServerStats.Controllers;
+using GoStatsAggregation.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
-namespace GoServerStats.Tests.Controllers
+namespace GoStatsAggregation.Tests.Controllers
 {
     public class HomeControllerTests
     {

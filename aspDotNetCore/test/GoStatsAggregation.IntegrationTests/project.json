@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "1.0.0-*",
   "testRunner": "xunit",
 
@@ -9,9 +9,9 @@
     },
     "xunit": "2.1.0",
     "dotnet-test-xunit": "1.0.0-rc2-build10015",
-    "GoServerStats": "1.0.0-*",
-    "FluentAssertions": "4.11.0",
-    "moq.netcore": "4.4.0-beta8"
+    "GoStatsAggregation": "1.0.0-*",
+    "FluentAssertions": "4.11.0",    
+    "Microsoft.AspNetCore.TestHost": "1.0.0"
   },
   "frameworks": {
     "netcoreapp1.0": {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace GoServerStats.Controllers
+namespace GoStatsAggregation.Controllers
 {
     public class HomeController : Controller
     {
